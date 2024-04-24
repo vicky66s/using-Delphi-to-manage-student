@@ -1,0 +1,68 @@
+program StudentManagement;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+type
+  TStudent = record
+    Name: string;
+    Grade: Integer;
+  end;
+
+var
+  Students: array of TStudent;
+
+procedure AddStudent(const AName: string; AGrade: Integer);
+begin
+  SetLength(Students, Length(Students) + 1);
+  Students[High(Students)].Name := AName;
+  Students[High(Students)].Grade := AGrade;
+end;
+
+procedure RemoveStudent(const AName: string);
+var
+  I, IndexToRemove: Integer;
+begin
+  IndexToRemove := -1;
+  for I := Low(Students) to High(Students) do
+  begin
+    if Students[I].Name = AName then
+    begin
+      IndexToRemove := I;
+      Break;
+    end;
+  end;
+  
+  if IndexToRemove <> -1 then
+  begin
+    for I := IndexToRemove to High(Students) - 1 do
+      Students[I] := Students[I + 1];
+    SetLength(Students, Length(Students) - 1);
+  end
+  else
+    Writeln('Student not found.');
+end;
+
+procedure DisplayStudents;
+var
+  I: Integer;
+begin
+  Writeln('Student Name | Grade');
+  for I := Low(Students) to High(Students) do
+    Writeln(Students[I].Name, ' | ', Students[I].Grade);
+end;
+
+begin
+  AddStudent('Arman', 18);
+  AddStudent('Negar', 20);
+  AddStudent('Mohammad', 16);
+
+  DisplayStudents;
+  
+  RemoveStudent('Negar');
+  
+  Writeln('After removing Negar:');
+  DisplayStudents;
+end.
