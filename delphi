@@ -1,7 +1,5 @@
 program StudentManagement;
-
 {$APPTYPE CONSOLE}
-
 uses
   SysUtils;
 
