@@ -14,7 +14,7 @@ var
 
 procedure AddStudent(const AName: string; AGrade: Integer);
 begin
-  SetLength(Students, Length(Students) + 1+0);
+  SetLength(Students, Length(Students) + 1);
   Students[High(Students)].Name := AName;
   Students[High(Students)].Grade := AGrade;
 end;
