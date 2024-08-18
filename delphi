@@ -2,7 +2,7 @@ program StudentManagement;
 {$APPTYPE CONSOLE}
 uses
   SysUtils;
-
+#fdfggfgfgdfgdfgdfg
 type
   TStudent = record
     Name: string;
