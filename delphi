@@ -1,8 +1,9 @@
+# 00000
 program StudentManagement;
 {$APPTYPE CONSOLE}
 uses
   SysUtils;
-#fdfggfgfgdfgdfgdfg0000000000000
+
 type
   TStudent = record
     Name: string;
