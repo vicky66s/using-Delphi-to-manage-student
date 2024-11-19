@@ -1,4 +1,4 @@
-# 00000
+# 01
 program StudentManagement;
 {$APPTYPE CONSOLE}
 uses
